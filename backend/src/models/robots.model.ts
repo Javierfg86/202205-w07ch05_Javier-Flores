@@ -1,4 +1,4 @@
-//Done but look type date!!!
+//Done but look type date and number!!!
 
 import mongoose from 'mongoose';
 import { mongooseConnect } from '../db/mongoose.js';
@@ -8,17 +8,17 @@ export interface iRobot {
     id: string;
     name: string;
     image: string;
-    speed: string;
-    endurance: string;
+    speed: number;
+    endurance: number;
     date: string;
 }
 
 const robotSchema = new mongoose.Schema({
     name: { type: String, required: true },
     image: String,
-    speed: { type: String, required: false },
-    endurance: { type: String, required: true },
-    date: { type: Date, default: Date.now },
+    speed: { type: Number, required: false },
+    endurance: { type: Number, required: true },
+    date: String,
 });
 
 export const Robot = mongoose.model('Robot', robotSchema);
