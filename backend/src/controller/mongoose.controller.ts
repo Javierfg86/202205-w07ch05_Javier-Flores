@@ -46,7 +46,6 @@ export class MongooseController<T> {
     };
     deleteController = async (req: Request, res: Response) => {
         const deleteContent = await this.model.findByIdAndDelete(req.params.id);
-        //res.status(status);
         res.end(JSON.stringify({ deleteContent }));
     };
 }
